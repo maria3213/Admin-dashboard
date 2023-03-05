@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter,Routes, Route } from "react-router-dom";
 import Topbar from "./scenes/global/Topbar";
 import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
@@ -16,7 +16,7 @@ import { ColorModeContext, useMode } from "./theme";
 import Calendar from "./scenes/calendar/calendar";
 import { ContactContextProvider } from "./context/contact-context";
 
-function App() {
+function App() { 
   const [theme, colorMode] = useMode();
   const [isSidebar, setIsSidebar] = useState(true);
 
@@ -26,9 +26,10 @@ function App() {
           <CssBaseline />
           <div className="app">
             <ContactContextProvider>
+              <BrowserRouter>
               <Sidebar isSidebar={isSidebar} />
               <main className="content">
-                <Topbar setIsSidebar={setIsSidebar} />
+               <Topbar setIsSidebar={setIsSidebar} />
                 <Routes>
                   <Route path="/" element={<Dashboard />} />
                   <Route path="/team" element={<Team />} />
@@ -42,6 +43,7 @@ function App() {
                   <Route path="/calendar" element={<Calendar />} />
                 </Routes>
               </main>
+              </BrowserRouter>
             </ContactContextProvider>
           </div>
         </ThemeProvider>

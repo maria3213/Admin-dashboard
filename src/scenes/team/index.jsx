@@ -17,7 +17,6 @@ const Form = () => {
   const handleFormSubmit = (values,{resetForm}) => {
     addInvoice(values);
     // console.log(values.date.toISOString().slice(0,10).replace(/(\d+)-(\d+)-(\d+)/, '$2/$3/$1'));
-
     resetForm(initialValues); //reset form after submit
   };
 
@@ -68,7 +67,7 @@ const Form = () => {
                 label="Cost"
                 onBlur={handleBlur}
                 onChange={handleChange}
-                value={values.age}
+                value={values.cost}
                 name="cost"
                 error={!!touched.cost && !!errors.cost}
                 helperText={touched.cost && errors.cost}
@@ -122,6 +121,7 @@ const phoneRegExp =
 
 const checkoutSchema = yup.object().shape({
   name: yup.string().required("required"),
+  cost: yup.string().required("required"),
   email: yup.string().email("invalid email").required("required"),
   contact: yup
     .string()
