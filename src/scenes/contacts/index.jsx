@@ -8,7 +8,7 @@ import { useContext } from "react";
 import { ContactContext } from "../../context/contact-context";
 
 
-const Contacts = () => {
+const Contacts = ({isDashboard=false}) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const { contacts } = useContext(ContactContext);
@@ -49,10 +49,10 @@ const Contacts = () => {
 
   return (
     <Box ml="20px" mr="20px">
-      <Header
+      {!isDashboard && <Header
         title="CONTACTS"
         subtitle="List of Contacts for Future Reference"
-      />
+      />}
       <Box
         m="20px 0 0 0"
         height="75vh"
