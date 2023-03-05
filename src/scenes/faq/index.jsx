@@ -17,7 +17,7 @@ const FAQ = () => {
       <Accordion defaultExpanded>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
-            An Important Question
+            How to input invoice?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -27,10 +27,10 @@ const FAQ = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
-            Another Important Question
+            How to input contacts information?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
@@ -40,10 +40,10 @@ const FAQ = () => {
           </Typography>
         </AccordionDetails>
       </Accordion>
-      <Accordion defaultExpanded>
+      <Accordion>
         <AccordionSummary expandIcon={<ExpandMoreIcon />}>
           <Typography color={colors.greenAccent[500]} variant="h5">
-            Your Favorite Question
+            How to download report from Dashboard?
           </Typography>
         </AccordionSummary>
         <AccordionDetails>
