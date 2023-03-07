@@ -196,7 +196,7 @@ export const themeSettings = (mode) => {
 // context for color mode
 export const ColorModeContext = createContext(null);
 
-//customize a react hook
+//customized hook
 export const useMode = () => {
   const [mode, setMode] = useState("light");
 
